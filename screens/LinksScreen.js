@@ -18,7 +18,16 @@ export default class LinksScreen extends React.Component {
             latitudeDelta: 0.1,
             longitudeDelta: 0.1
           }}
-        />
+        >
+          <MapView.Marker
+            coordinate={{
+              latitude: 59.32932349999999,
+              longitude: 18.06858080000063
+            }}
+            title={"My marker's title"}
+            descriptiion={"My marker's discription"}
+          />
+        </MapView>
       </View>
     );
   }
