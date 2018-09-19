@@ -1,6 +1,7 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TextInput } from "react-native";
 import MapView from "react-native-maps";
+import { GoogleAutoComplete } from "react-native-google-autocomplete";
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
@@ -10,6 +11,20 @@ export default class LinksScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <GoogleAutoComplete
+          style={styles.upper}
+          apiKey="AIzaSyARBOLxkEHtMipbz3afw8mZJN1dUpTPmKg"
+        >
+          {({}) => (
+            <View>
+              <TextInput
+                style={styles.textInput}
+                placeholder="Search a place"
+              />
+            </View>
+          )}
+        </GoogleAutoComplete>
+
         <MapView
           style={styles.map}
           region={{
@@ -35,19 +50,16 @@ export default class LinksScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    justifyContent: "flex-end",
-    alignItems: "center"
+    flex: 1
   },
   map: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0
+    flex: 1
+  },
+  textInput: {
+    height: 40,
+    borderWidth: 1
+  },
+  upper: {
+    flex: 1
   }
 });
