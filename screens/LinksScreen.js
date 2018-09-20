@@ -15,11 +15,12 @@ export default class LinksScreen extends React.Component {
           style={styles.upper}
           apiKey="AIzaSyARBOLxkEHtMipbz3afw8mZJN1dUpTPmKg"
         >
-          {({}) => (
+          {({ handleTextChange, locationResults }) => (
             <View>
               <TextInput
                 style={styles.textInput}
                 placeholder="Search a place"
+                onChangeText={handleTextChange}
               />
             </View>
           )}
