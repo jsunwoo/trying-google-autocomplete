@@ -15,6 +15,7 @@ export default class LinksScreen extends React.Component {
           style={styles.upper}
           apiKey="AIzaSyARBOLxkEHtMipbz3afw8mZJN1dUpTPmKg"
           debounce={500}
+          minLength={3}
         >
           {({ handleTextChange, locationResults }) => (
             <React.Fragment>
