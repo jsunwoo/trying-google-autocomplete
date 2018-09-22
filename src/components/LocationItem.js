@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-class LocationItem extends PureComponent {
+class LocationItem extends React.Component {
   render() {
     return (
       <View>
