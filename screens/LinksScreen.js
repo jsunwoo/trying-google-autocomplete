@@ -1,7 +1,8 @@
 import React from "react";
-import { View, StyleSheet, TextInput } from "react-native";
+import { View, StyleSheet, TextInput, ScrollView } from "react-native";
 import MapView from "react-native-maps";
 import { GoogleAutoComplete } from "react-native-google-autocomplete";
+import LocationItem from "../src/components/LocationItem";
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
@@ -27,6 +28,11 @@ export default class LinksScreen extends React.Component {
                   onChangeText={handleTextChange}
                 />
               </View>
+              <ScrollView>
+                {locationResults.map(el => (
+                  <LocationItem {...el} key={el.id} />
+                ))}
+              </ScrollView>
             </React.Fragment>
           )}
         </GoogleAutoComplete>

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-class LocationItem extends React.Component {
+class LocationItem extends PureComponent {
   render() {
     return (
-      <View>
+      <View style={styles.root}>
         <Text>{this.props.description}</Text>
       </View>
     );
@@ -18,3 +18,5 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+
+export default LocationItem;
